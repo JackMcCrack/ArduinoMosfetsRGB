@@ -17,6 +17,8 @@ int g = 0;
 int b = 0;
 
 void setup() {
+  Serial.begin(115200);
+  Serial.println("https://github.com/JackMcCrack/ArduinoMosfetsRGB - SETUP: PinRED: " + String(RED) + " PinGREEN: " + String(GREEN) + " PinBLUE: " + String(BLUE));
   pinMode(RED,   OUTPUT);    // define digital pins as outputs and inputs as needed
   pinMode(GREEN, OUTPUT);
   pinMode(BLUE,  OUTPUT);
