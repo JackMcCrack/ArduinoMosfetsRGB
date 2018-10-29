@@ -3,12 +3,9 @@
 // and individual RGB control mode
 // adapted from http://learn.adafruit.com/rgb-led-strips/example-code
 
-const int RED = 9;    // define digital output pins for individual red,
-const int GREEN = 10;  //green and blue channels
-const int BLUE = 11;
-
-
-int FADESPEED = 0;  // initiate fade speed set by potentiometer
+const int RED = 8;    // define digital output pins for individual red,
+const int GREEN = 9;  //green and blue channels
+const int BLUE = 10;
 
 int r = 0;  // initialize the red, green and blue values
 
@@ -17,12 +14,13 @@ int g = 0;
 int b = 0;
 
 void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
   Serial.println("https://github.com/JackMcCrack/ArduinoMosfetsRGB - SETUP: PinRED: " + String(RED) + " PinGREEN: " + String(GREEN) + " PinBLUE: " + String(BLUE));
   pinMode(RED,   OUTPUT);    // define digital pins as outputs and inputs as needed
   pinMode(GREEN, OUTPUT);
   pinMode(BLUE,  OUTPUT);
-
+  digitalWrite(LED_BUILTIN, LOW); //LED off when setup() done
 }
 
 void loop() {
